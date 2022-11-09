@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int i,j;float sum=0;	float avg;int c[3];int b[3];
+	int a[3][4]={{88,99,77,66},{66,78,99,88},{99,88,77,66}};
+	for (i=0;i<3;i++)
+	{	 c[i]=0;
+		for( j=0;j<4;j++)		
+		{
+				sum+=a[i][j];
+				c[i]+=a[i][j];//总值
+		}	
+			printf("第%d个同学的总成绩是%d\n",i+1,c[i]);
+				b[i]=(float)c[i]/4;
+			printf("第%d个同学的平均成绩%d\n",i+1,b[i]);
+	}
+		printf("3个同学的总成绩的平均数是%f\n",sum/12);
+		
+}
