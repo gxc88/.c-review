@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h> 
+long long fact (int n)
+{
+	if(n==1)
+		return 1;
+	else
+		return n*fact(n-1);	
+}
+double inf (double x,double eps)
+{		
+	int i,j;
+	double num=1,sum=0;
+	for(i=1,j=0;fabs(num)>=eps;i+=2,j++)
+	{	
+		num=pow(x,i)/(fact(i)*pow(-1,j)); 	
+		sum+=num;
+	}
+	return sum;	
+}
+int main()
+{
+	double a,x,eps;
+	printf("请输入一个x\n");
+	scanf("%lf",&x);
+	printf("请输入一个ε\n");
+	scanf("%lf", &eps);
+	a = inf (x, eps);
+	printf("sin x =%lf\n",a);	
+}
