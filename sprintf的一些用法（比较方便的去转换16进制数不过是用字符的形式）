@@ -1,0 +1,16 @@
+#include<stdio.h>
+char str[100];
+char* change(int a)
+{
+ sprintf(str,"%x",a);
+ return (str);
+}
+int main () 
+{ 
+ int a;
+ printf("请输入想转化的十进制数\n");
+ scanf("%d",&a);
+ char *c;
+ c=change(a);
+ printf("该数十六进制为\n0x%s",c);
+}
